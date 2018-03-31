@@ -171,15 +171,15 @@ public class AdjMatrixGraph<T> {
           for(int l = 0; l < cardinalityG2; l++) {
             if(i == k) {
               if(graph2.isAdjacent(j,l)) {
-                int spot1 = i*cardinalityG1 + j;
-                int spot2 = k*cardinalityG1 + l;
+                int spot1 = i*cardinalityG2 + j;
+                int spot2 = k*cardinalityG2 + l;
                 newAdjMatrixGraph.addEdge(spot1, spot2);
               }//if adjacent
             }//if i==k
             if(j == l) {
               if(isAdjacent(i,k)) {
-                int spot1 = i*cardinalityG1 + j;
-                int spot2 = k*cardinalityG1 + l;
+                int spot1 = i*cardinalityG2 + j;
+                int spot2 = k*cardinalityG2 + l;
                 newAdjMatrixGraph.addEdge(spot1,spot2);
               }//if adjacent
             }//if j==l

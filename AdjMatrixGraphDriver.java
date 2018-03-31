@@ -14,5 +14,8 @@ public class AdjMatrixGraphDriver {
     System.out.println(graph2);
     AdjMatrixGraph<String[]> graph3 = graph.cartesianProduct(graph2);
     System.out.println(graph3);
+    for(Object[] node : graph3.nodes) {
+      System.out.println("("+node[0]+","+node[1]+")");
+    }
   }
 }
