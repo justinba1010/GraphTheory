@@ -8,3 +8,7 @@ Graph implemented with adjacency matrices with the following operations
  * cartesianProduct
  * isAdjacent
  * getAdjacent
+
+
+For graph images I am using
+http://graphonline.ru/en/create_graph_by_matrix
