@@ -19,6 +19,7 @@ public class PetersenGraphSquared{
     petersen.addEdge(6,8);
     petersen.addEdge(6,9);
     petersen.addEdge(7,9);
+    System.out.println(petersen);
     AdjMatrixGraph<String[]> petersenSquared = petersen.cartesianProduct(petersen);
     System.out.println(petersenSquared);
 

@@ -15,6 +15,7 @@ public class MoserSpindleSquared{
     moser.addEdge(3,4);
     moser.addEdge(3,5);
     moser.addEdge(4,5);
+    System.out.println(moser);
     AdjMatrixGraph<String[]> moserSquared = moser.cartesianProduct(moser);
     System.out.println(moserSquared);
 
