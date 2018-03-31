@@ -86,7 +86,7 @@ public class AdjMatrixGraph<T> {
 
     for(int[] row : adjMatrix) {
       for(int spot : row) {
-        s += String.format("%3d", spot);
+        s += String.format("%1d,", spot);
       }
       s += "\n";
     }
@@ -161,6 +161,53 @@ public class AdjMatrixGraph<T> {
       }//for nodeG2
     }//for nodeG1
 
+    public int size() {
+      return size;
+    }//size
+
+    public int cardinality() {
+      return size;
+    }//cardinality
+
+    private int degrees(int vertex, boolean strict, boolean inverse){
+      //n time
+      if(vertex < 0 || vertex >= size) return 0;
+      int degree = 0;
+      for(int i = 0; i < size; i++) {
+        //if not strict, add 1 as long as either direction is an edge, otherwise only the direction according to if its inverted
+        if(!inverse) {
+          degree += (adjMatrix[i][vertex] != 0 || (adjMatrix[vertex][i] != 0 && !strict)) ? 1 : 0;
+        } else {
+          degree += (adjMatrix[vertex][i] != 0 || (adjMatrix[i][vertex] != 0 && !strict)) ? 1 : 0;
+        }
+      }//for i
+      return degree;
+    }//degrees
+
+    public int degree(int vertex) {
+      return degrees(vertex, true, false);
+    }//degree int vertex
+
+    public int degree(T vertex) {
+      return degree(getIndex(vertex));
+    }//degree T vertex
+
+    public int degreeInv(int vertex) {//
+      return degrees(vertex, true, true);
+    }//degreeInv int vertex
+
+    public int degreeInv(T vertex) {
+      return degreeInv(getIndex(vertex));
+    }//degreeInv T vertex
+
+    public int degreeUndirected(int vertex) {
+      return degrees(vertex, false, false);
+    }//degreeUndirected int vertex
+
+    public int degreeUndirected(T vertex) {
+      return degreeUndirected(getIndex(vertex));
+    }
+    
     //(∀i∈V(G1))(∀j∈V(G2))(∀k∈V(G1))(∀l∈V(G2))((i,j)(k,l)∈E(G1XG2)↔(i=k	∧ jl ∈E(G2)∨(j==l ∧ ik ∈E(G2))))
     AdjMatrixGraph<T[]> newAdjMatrixGraph = new AdjMatrixGraph<T[]>(vectors);
     int cardinalityG1 = size;
