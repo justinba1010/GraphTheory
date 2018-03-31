@@ -9,13 +9,13 @@ Graph implemented with adjacency matrices with the following operations
  * isAdjacent
  * getAdjacent
  * degree
-  * Directed:
-   * degree
-    * degreeInv
-      * Number of edges ending at vertex
+   * Directed:
+     * degree
+     * degreeInv
+       * Number of edges ending at vertex
    * Undirecred:
-    * degreeUndirected
-  * size
+     * degreeUndirected
+ * size
 
 Coming Up:
  * Search Algorithm
