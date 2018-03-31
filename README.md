@@ -8,6 +8,17 @@ Graph implemented with adjacency matrices with the following operations
  * cartesianProduct
  * isAdjacent
  * getAdjacent
+ * degree
+  * Directed:
+    * degree
+    * degreeInv
+      * Number of edges ending at vertex
+  * Undirecred:
+    * degreeUndirected
+  * size
+
+Coming Up:
+ * Search Algorithm
 
 
 For graph images I am using
