@@ -164,7 +164,7 @@ public class AdjMatrixGraph<T> {
     //n^~6 time lol
     ArrayList<T[]> vectors = new ArrayList<T[]>();
     //Make vectors list pairs of vectors from G1 and G2
-    //(∀i∈V(G1))(∀j∈V(G1))((i,j)∈G1XG2)
+    //(∀i∈V(G1))(∀j∈V(G2))((i,j)∈G1XG2)
     for(T nodeG1 : nodes) {
       for(T nodeG2 : graph2.nodes) {
         T[] newVector = (T[])( new Object[2]);
