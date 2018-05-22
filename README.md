@@ -1,6 +1,12 @@
 # GraphTheory
 I began reading *Introduction to Graph Theory* by Gary Chartrand and Ping Zhang, and wanted to play with some of the things I learned and see if I can write them into code.
 
+TODO:
+ * Graph Coloring
+ * Node class
+ * Dijkstra's algorithm
+ * And some more.
+
 Graph implemented with adjacency matrices with the following operations
  * Generics
  * addEdge
