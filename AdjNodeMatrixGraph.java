@@ -14,17 +14,17 @@ public class AdjNodeMatrixGraph<T extends Node> extends AdjMatrixGraph<T> {
     this.chromaticNumber = 0;
   }
 
-  public AdjNodeMatrixGraph(ArrayList<T> nodes) {
-    super(nodes);
+  public AdjNodeMatrixGraph(ArrayList<T> aNodes) {
+    super(aNodes);
   }
 
-  private void ColorGraphGreedy(ArrayList<T> nodes) {
+  private void ColorGraphGreedy(ArrayList<T> aNodes) {
     //Color all nodes -1
-    for(T node : nodes) {
+    for(T node : aNodes) {
       node.setColor(-1);
     }
     //Greedy Algorithm
-    for(T node : nodes) {
+    for(T node : aNodes) {
       ArrayList<T> adjacents = this.getAdjacent(node);
       int color = -1;
       boolean matched = true;
@@ -55,4 +55,14 @@ public class AdjNodeMatrixGraph<T extends Node> extends AdjMatrixGraph<T> {
     Collections.shuffle(randomOrderedNodes);
     ColorGraphGreedy(randomOrderedNodes);
   }//ColorGraphGreedy
+
+  public boolean validColoring() {
+    for(T node : this.nodes) {
+      ArrayList<T> adjacents = this.getAdjacent(node);
+      for(T adjacent : adjacents) {
+        if(adjacent.getColor() == node.getColor()) return false;
+      }//for adjacent
+    }//for nodes
+    return false;
+  }//validColoring
 }//AdjNodeMatrixGraph

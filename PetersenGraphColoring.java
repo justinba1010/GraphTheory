@@ -27,7 +27,7 @@ public class PetersenGraphColoring{
     petersen.addEdge(7,9);
     System.out.println(petersen);
 
-    petersen.ColorGraphGreedyRandom();
+    petersen.ColorGraphGreedy();
 
     for(Node n : petersen.nodes) {
       System.out.println(n.getColor());
