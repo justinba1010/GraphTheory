@@ -22,6 +22,10 @@ public class Node<T> {
     color = aColor;
   }
 
+  public int getColor() {
+    return color;
+  }
+
   public T getNode() {
     return node;
   }

@@ -7,7 +7,11 @@ public class AdjNodeMatrixGraphDriver {
     l.add(u1);
     l.add(u2);
     AdjNodeMatrixGraph aGraph = new AdjNodeMatrixGraph(l);
-    System.out.println(aGraph.nodes.get(0).getNode());
+    Node u3 = (Node)aGraph.nodes.get(0);
+    System.out.println(u3.getColor());
+    aGraph.ColorGraphGreedy();
+    u3 = (Node)aGraph.nodes.get(0);
+    System.out.println(u3.getColor());
     //For debugging
     //Looks like it is working how I want it to.
   }
