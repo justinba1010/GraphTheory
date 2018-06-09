@@ -8,8 +8,10 @@ import java.util.*;
 //
 
 public class AdjNodeMatrixGraph<T extends Node> extends AdjMatrixGraph<T> {
+  private int chromaticNumber;
   public AdjNodeMatrixGraph() {
     super();
+    this.chromaticNumber = 0;
   }
 
   public AdjNodeMatrixGraph(ArrayList<T> nodes) {
@@ -33,6 +35,9 @@ public class AdjNodeMatrixGraph<T extends Node> extends AdjMatrixGraph<T> {
           matched |= adjacentNode.getColor() == color;
         }//for neighbor
       }//while
+
+      //Chromatic Number check
+      if(color > this.chromaticNumber) this.chromaticNumber = color;
       node.setColor(color);
     }//for
   }//ColorGraphGreedy
@@ -47,19 +52,9 @@ public class AdjNodeMatrixGraph<T extends Node> extends AdjMatrixGraph<T> {
       randomOrderedNodes.add(node);
     }
     Collections.shuffle(randomOrderedNodes);
-    //Greedy Algorithm
-    for(T node : randomOrderedNodes) {
-      ArrayList<T> adjacents = this.getAdjacent(node);
-      int color = -1;
-      boolean matched = true;
-      while(matched) {
-        color++;
-        matched = false;
-        for(T adjacentNode : adjacents) {
-          matched |= adjacentNode.getColor() == color;
-        }//for neighbor
-      }//while
-      node.setColor(color);
-    }//for
+    ArrayList<T> originalOrdering = this.nodes;
+    this.nodes = randomOrderedNodes;
+    ColorGraphGreedy();
+    this.nodes = originalOrdering;
   }//ColorGraphGreedy
 }//AdjNodeMatrixGraph
