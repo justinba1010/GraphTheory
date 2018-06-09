@@ -39,7 +39,7 @@ Moser's Spindle X Moser's Spindle
 Petersen's Graph  
 ![alt text Petersen Graph](https://github.com/justinba1010/GraphTheory/blob/master/PetersenGraph.png?raw=true)  
 Petersen's Graph X Petersen's Graph  
-![alt text Petersen's Graph^2](https://github.com/justinba1010/GraphTheory/blob/master/PetersenSquared.png?raw=true)  g
+![alt text Petersen's Graph^2](https://github.com/justinba1010/GraphTheory/blob/master/PetersenSquared.png?raw=true)
 
 Graph Coloring:
-![alt text Petersen's Colored](https://github.com/justinba1010/GraphTheory/blob/master/PetersenColored.png?raw=true)  g
+![alt text Petersen's Colored](https://github.com/justinba1010/GraphTheory/blob/master/PetersenColored.png?raw=true) 
