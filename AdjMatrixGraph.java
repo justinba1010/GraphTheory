@@ -247,25 +247,53 @@ public class AdjMatrixGraph<T> {
 
     public int degreeUndirected(T vertex) {
       return degreeUndirected(getIndex(vertex));
-    }
+    }//degreeUndirected
 
+    //Searching
+    //Depth First Search
+    public ArrayList<Integer> depthSearch(int i, int j) {
+      markedVerts = new ArrayList<Integer>();
+      Stack<Integer> stack = new Stack<Integer>();
+      stack.push(i);
+      ArrayList<Integer> arry = new ArrayList(depthSearch(i, j, stack));
+      Collections.reverse(arry);
+      return arry;
+    }//depthSearch
 
+    private Stack<Integer> depthSearch(int i, int j, Stack<Integer> stack)  {
+      for(int x : getAdjacentIndexed(i)) {
+        //Check if we already searched here.
+        if(markedVerts.contains(x)) {
+          break;
+        }
+        //Check if we found our stuff.
+        if(x == j) {
+          return stack;
+        }
+        //Mark this vertex
+        markedVerts.add(x);
+        //Push to stack
+        stack.push(x);
+        return depthSearch(i,j,stack);
+      }//for x
+      //We didn't find a path
+      return new Stack();
+    }//depthSearch
 
-  //Searching Algorithms
-  //BFS Search
-  /*
+    //Breadth First Search
+    public ArrayList<Integer> breadthSearch(int i, int j) {
+      markedVerts = new ArrayList<Integer>();
+      visitedVerts = new ArrayList<Integer>();
+      Queue<Integer> queue = new LinkedList<Integer>();
+      queue.add(i);
+      return new ArrayList(breadthSearch(i, j, queue, queue));
+    }//breadthSearch
+    //Not done yet.
+    private Queue<Integer> breadthSearch(int i, int j, Queue<Integer> queue, Queue<Integer> path) {
+      while(queue.size() != 0) {
+        queue.poll();
+      }//while
+      return new LinkedList();
+    }//breadthSearch
 
-  public ArrayList<T[]> pathBFS(int u, int v) {
-    visitedVerts = new ArrayList<Integer>();
-    markedVerts = new ArrayList<Integer>();
-    return privatePathBFS(u,v);
-  }//pathBFS
-
-  private ArrayList<T[]> privatePathBFS(int u, int v, Array) {
-    for(int adjacent : getAdjacentIndexed(u)) {
-      visitedVerts.add(adjacent);
-      if
-    }
-  }
-  */
 }//AdjMatrixGraph

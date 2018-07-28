@@ -41,5 +41,5 @@ Petersen's Graph
 Petersen's Graph X Petersen's Graph  
 ![alt text Petersen's Graph^2](https://github.com/justinba1010/GraphTheory/blob/master/PetersenSquared.png?raw=true)
 
-Graph Coloring:
-![alt text Petersen's Colored](https://github.com/justinba1010/GraphTheory/blob/master/PetersenColored.png?raw=true) 
+Graph Coloring:  
+![alt text Petersen's Colored](https://github.com/justinba1010/GraphTheory/blob/master/PetersenColored.png?raw=true)
